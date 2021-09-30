@@ -13,4 +13,10 @@ The final dataframe contains the following informations:
     
     * URL of that product page
 # 2. Methods
+The project made use of Selenium, an open-source web-based automation tool. Selenium primarily used for testing in the industry but can also be used for web scraping. 
+
+![image](https://user-images.githubusercontent.com/81749639/135404921-2413db83-8463-43c4-8ed0-3b0cb1cceb8e.png)
+
 # 3. Results
+![image](https://user-images.githubusercontent.com/81749639/135405141-111254be-03ec-4bfd-b7ca-62fcf54dd3f0.png)
+
