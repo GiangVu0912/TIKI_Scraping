@@ -1,3 +1,28 @@
+# Function to (re)start driver
+def start_driver(force_restart=False):
+    global DRIVER
+    
+    if DRIVER is not None:
+        if force_restart:
+            DRIVER.close()
+        else:
+            raise RuntimeError('ERROR: cannot overwrite an active driver. Please close the driver before restarting.')
+    
+    # Setting up the driver
+    options = webdriver.ChromeOptions()
+    options.add_argument('-headless') # we don't want a chrome browser opens, so it will run in the background
+    options.add_argument('-no-sandbox')
+    options.add_argument('-disable-dev-shm-usage')
+
+    DRIVER = webdriver.Chrome('chromedriver',options=options)
+
+# Wrapper to close driver if its created
+def close_driver():
+    global DRIVER
+    if DRIVER is not None:
+        DRIVER.close()
+    DRIVER = None
+
 # Function to extract product info from the product
 def get_product_info_single(product):
     d = {'name':'',
